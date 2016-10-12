@@ -3,17 +3,16 @@
  */
 
 import React from 'react';
-import TinyMCE from 'react-tinymce';
+import TinyMceContainer from './tiny-mce-container';
+import {Provider} from 'react-redux';
+import store from '../stores/store';
 
 export default class App extends React.Component {
 
     render() {
-        return (
-            <TinyMCE
-                config={{
-                    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
-                }}
-            />
+        return (<Provider store={store}>
+                <TinyMceContainer />
+            </Provider>
         );
     }
 }
